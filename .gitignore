@@ -1,0 +1,24 @@
+# Virtual environment
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store
+
+# IDEs
+.idea/
+.vscode/
+
+# Testing
+.pytest_cache/
+
+# Data artifacts (keep folders via .gitkeep)
+data/raw_videos/*
+!data/raw_videos/.gitkeep
+data/frames/*
+!data/frames/.gitkeep
+data/predictions/*
+!data/predictions/.gitkeep
