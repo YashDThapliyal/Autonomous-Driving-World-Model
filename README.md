@@ -1,15 +1,15 @@
 # Driving World Model (DWM)
 
-Modern autonomous driving systems increasingly use end-to-end neural networks that map sensory input directly to control actions. These approaches are powerful but provide limited access to intermediate reasoning. Classical robotics pipelines decompose perception, planning, and control into modular components, enabling transparency and debugging at the cost of manual subsystem engineering.
+Modern autonomous driving systems increasingly use end-to-end neural networks that map sensory input directly to control actions. These approaches are powerful but provide limited access to intermediate reasoning. 
 
-This project takes a hybrid approach. A Vision-Language Model (VLM) converts dashcam video into **symbolic world states** that describe:
+This project makes that intermediate layer explicit: a Vision-Language Model (VLM) converts dashcam video into **symbolic world states** that describe:
 - **affordances** (go, wait, stop)
 - **yield relations** (none, lead, pedestrian)
 - **lead vehicle dynamics** (moving, stopped)
 
 These predictions are then temporally smoothed, segmented into behavioral phases, translated into planner commands, and paired with short natural language glosses.
 
-The outcome is an interpretable **Driving World Model** that bridges perception and planning and can be visualized. See the [Demo Video](https://raw.githubusercontent.com/YashDThapliyal/VLM-Driving-World-Model/main/driving_world_model_demo.mp4)
+The outcome of all these layers is an interpretable **Driving World Model** that bridges perception and planning and can be visualized. See the [Demo Video](https://raw.githubusercontent.com/YashDThapliyal/VLM-Driving-World-Model/main/driving_world_model_demo.mp4)
 
 
 ![demo](https://github.com/user-attachments/assets/efe50c51-376c-4db4-950b-78c0a1f440b9)
