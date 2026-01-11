@@ -26,6 +26,18 @@ This system answers three key questions about any driving scene:
 
 Unlike end-to-end driving networks that output raw control signals, this produces **symbolic, human-readable states** that bridge perception and planning—enabling reasoning, debugging, and human validation.
 
+### Not Just Object Detection
+
+**Object detection answers:** "What objects are present?"
+
+**A world model answers:** "What do those objects mean for the ego vehicle?"
+
+For example:
+- "yield to that pedestrian"
+- "follow that car until it moves"
+
+This semantic layer provides the cognitive bridge between perception and planning.
+
 ## Pipeline Overview
 
 ```
@@ -125,6 +137,8 @@ Builds a symbolic state machine, reinjects brief "GO" opportunities that smoothi
 
 Creates MP4 videos with HUD overlays showing frame info, phase labels, scene descriptions, world state, and planner intent.
 
+**Visual Grounding (YOLO):** During visualization, the system highlights the specific pedestrian or vehicle the planner is reacting to using YOLO object detection. This makes yield and follow behaviors visually grounded and interpretable—viewers can see exactly which object triggered each planner decision.
+
 **Output:** `results/{clip}_overlay.mp4`
 
 ## Project Structure
@@ -186,6 +200,7 @@ python -m src.eval_world_model
 ## Key Dependencies
 
 - `anthropic` - Claude VLM API
+- `ultralytics` - YOLOv8 object detection (for visual grounding)
 - `opencv-python` - Video/frame processing
 - `Pillow` - Image processing
 - `moviepy` - Video generation
