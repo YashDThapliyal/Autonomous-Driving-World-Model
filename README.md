@@ -11,7 +11,8 @@ These predictions are then temporally smoothed, segmented into behavioral phases
 
 The outcome is an interpretable **Driving World Model** that bridges perception and planning and can be visualized. See the [Demo Video](https://raw.githubusercontent.com/YashDThapliyal/VLM-Driving-World-Model/main/driving_world_model_demo.mp4)
 
-![demo](https://github.com/user-attachments/assets/376e3e04-2bf5-4b14-aab6-09b45a33c00a)
+
+![demo](https://github.com/user-attachments/assets/efe50c51-376c-4db4-950b-78c0a1f440b9)
 
 
 ## What This Does
@@ -26,7 +27,7 @@ This system answers three key questions about any driving scene:
 
 Unlike end-to-end driving networks that output raw control signals, this produces **symbolic, human-readable states** that bridge perception and planning—enabling reasoning, debugging, and human validation.
 
-### Not Just Object Detection
+### This is not just Object Detection
 
 **Object detection answers:** "What objects are present?"
 
