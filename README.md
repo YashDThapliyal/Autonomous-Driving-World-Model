@@ -9,7 +9,8 @@ This project takes a hybrid approach. A Vision-Language Model (VLM) converts das
 
 These predictions are then temporally smoothed, segmented into behavioral phases, translated into planner commands, and paired with short natural language glosses.
 
-The outcome is an interpretable **Driving World Model** that bridges perception and planning and can be visualized. See the demo: [`driving_world_model_demo.mp4`](./driving_world_model_demo.mp4)
+The outcome is an interpretable **Driving World Model** that bridges perception and planning and can be visualized. See the [Demo Video](https://raw.githubusercontent.com/YashDThapliyal/VLM-Driving-World-Model/main/driving_world_model_demo.mp4)
+
 
 ## What This Does
 
