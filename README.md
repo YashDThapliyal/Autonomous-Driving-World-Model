@@ -1,8 +1,15 @@
 # Driving World Model
 
-Modern autonomous driving systems increasingly rely on end-to-end neural networks that map sensor input directly to control actions. While powerful, these systems often lack intermediate structure for reasoning, debugging, and human interpretation. In contrast, classical robotics stacks decompose perception, planning, and control into modular components — allowing transparency and intervention, but requiring handcrafted features and sensor-specific modules.
+Modern autonomous driving systems increasingly use end-to-end neural networks that map sensory input directly to control actions. These approaches are powerful but provide limited access to intermediate reasoning. Classical robotics pipelines decompose perception, planning, and control into modular components, enabling transparency and debugging at the cost of manual subsystem engineering.
 
-This project explores a hybrid approach using a Vision-Language Model (VLM) to generate symbolic, planner-friendly world states directly from dashcam video. The system extracts semantic affordances (e.g., go, wait, stop), identifies what the ego vehicle must yield to, models lead vehicle dynamics, segments behavior into temporal phases, and produces human-readable explanations and planner commands. The result is a lightweight, interpretable “world model” that bridges perception and planning by transforms dashcam video into interpretable, planner-friendly world states.
+This project takes a hybrid approach. A Vision-Language Model (VLM) converts dashcam video into **symbolic world states** that describe:
+- **affordances** (go, wait, stop)
+- **yield relations** (none, lead, pedestrian)
+- **lead vehicle dynamics** (moving, stopped)
+
+These predictions are then temporally smoothed, segmented into behavioral phases, translated into planner commands, and paired with short natural language glosses.
+
+The outcome is an interpretable **Driving World Model ** that bridges perception and planning and can be visualized.
 
 ## What This Does
 
