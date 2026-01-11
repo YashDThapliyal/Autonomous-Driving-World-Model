@@ -2,6 +2,7 @@
 
 import os
 import base64
+import time
 from pathlib import Path
 from typing import Dict, Optional
 
@@ -136,8 +137,20 @@ class VLMWorldModel:
         self.model_name = model_name
 
     def infer_frame(self, image_path: Path) -> Dict[str, str]:
+        print(f"[VLMWorldModel] Calling Claude for: {image_path}")  # debug log
+
+        # Encode image
         image_b64 = _load_image_base64(image_path)
 
+        # Pick media_type based on extension
+        suffix = image_path.suffix.lower()
+        if suffix in [".png"]:
+            media_type = "image/png"
+        else:
+            # default to jpeg
+            media_type = "image/jpeg"
+
+        start = time.time()
         msg = self.client.messages.create(
             model=self.model_name,
             max_tokens=256,
@@ -152,7 +165,7 @@ class VLMWorldModel:
                             "type": "image",
                             "source": {
                                 "type": "base64",
-                                "media_type": "image/jpeg",
+                                "media_type": media_type,
                                 "data": image_b64,
                             },
                         },
@@ -160,9 +173,13 @@ class VLMWorldModel:
                 },
             ],
         )
+        elapsed = time.time() - start
+        print(f"[VLMWorldModel] Claude call completed in {elapsed:.2f}s for: {image_path.name}")
 
+        # Add delay to avoid rate limiting (0.5 seconds between API calls)
+        time.sleep(0.5)
 
-        # collect text chunks
+        # Collect text blocks
         text_chunks = []
         for block in msg.content:
             if getattr(block, "type", None) == "text":
