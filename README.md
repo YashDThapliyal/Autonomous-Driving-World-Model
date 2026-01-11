@@ -2,6 +2,10 @@
 
 A semantic world model for autonomous driving that transforms dashcam video into interpretable, planner-friendly world states using vision-language models.
 
+Modern autonomous driving systems increasingly rely on end-to-end neural networks that map sensor input directly to control actions. While powerful, these systems often lack intermediate structure for reasoning, debugging, and human interpretation. In contrast, classical robotics stacks decompose perception, planning, and control into modular components — allowing transparency and intervention, but requiring handcrafted features and sensor-specific modules.
+
+This project explores a hybrid approach using a Vision-Language Model (VLM) to generate symbolic, planner-friendly world states directly from dashcam video. The system extracts semantic affordances (e.g., go, wait, stop), identifies what the ego vehicle must yield to, models lead vehicle dynamics, segments behavior into temporal phases, and produces human-readable explanations and planner commands. The result is a lightweight, interpretable “world model” that bridges perception and planning while remaining simple enough to visualize and narrate for demos.
+
 ## What This Does
 
 This system answers three key questions about any driving scene:
