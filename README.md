@@ -143,6 +143,9 @@ Creates MP4 videos with HUD overlays showing frame info, phase labels, scene des
 ```
 driving-affordance-world-model/
 ├── main.py                     # End-to-end pipeline driver
+├── analysis/
+│   ├── compute_metrics.py      # Results section metrics
+│   └── count_frames.py         # Frames per clip
 ├── src/
 │   ├── extract_frames.py       # Stage 0
 │   ├── run_vlm_inference.py    # Stage 1 (orchestrator)
@@ -181,6 +184,45 @@ python -m src.eval_world_model
 - Accuracy metrics
 - Safety-critical error rates
 - Per-field performance breakdowns
+
+## Results
+
+Run on 9 dashcam clips (`clip1`–`clip9`) from the [driving-test dataset](https://www.kaggle.com/datasets/snmahsa/driving-test), sampled at 2 fps: **211 frames, about 105 seconds of driving**. Every number below comes from the CSVs in `data/predictions/` and can be regenerated with:
+
+```bash
+python analysis/compute_metrics.py          # add --export_csv metrics.csv to save a table
+```
+
+### Temporal smoothing cuts label jitter by 46%
+
+A "flip" is a frame where a field's label differs from the previous frame of the same clip. Fewer flips means the world state stops flickering between, say, `go` and `wait` on consecutive frames.
+
+| Field | Flips before smoothing | Flips after | Reduction |
+|-------|-----------------------:|------------:|----------:|
+| `affordance` | 32 | 13 | 59.4% |
+| `yield_to` | 39 | 25 | 35.9% |
+| `lead_state` | 35 | 19 | 45.7% |
+| **All three fields** | **106** | **57** | **46.2%** |
+
+Mean run length (frames a label holds before changing) rises from 5.2 to 9.6 for `affordance`.
+
+### From frames to phases to decisions
+
+| Stage | Count | What it is |
+|-------|------:|------------|
+| Frames | 211 | per-frame world states from the VLM |
+| Phase segments | 43 | runs of frames sharing a phase, drawn from **7 phase types** (e.g. *FOLLOW / queue*, *YIELD to pedestrian*, *STOP behind vehicle*) |
+| Planner decisions | 52 | state-machine steps, each mapped to one of **4 commands**: FOLLOW (19), WAIT (17), GO (10), STOP (6) |
+
+The most common phase is *FOLLOW / queue* (17 of 43 segments), followed by *YIELD to pedestrian* (9).
+
+### Overlay videos
+
+All 9 annotated clips are in [`results/`](results/) (`clip1_overlay.mp4` … `clip9_overlay.mp4`).
+
+### Scope
+
+These are pipeline statistics on 9 short clips, not driving-accuracy results. Per-frame accuracy against human labels (`src/eval_world_model.py`) needs annotations in `data/labels/`, which currently cover clips 1–2 only. The raw videos and extracted frames are not committed; download the dataset and run `python main.py --all` to rebuild them.
 
 ## Data Flow
 

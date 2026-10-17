@@ -176,8 +176,8 @@ class VLMWorldModel:
         elapsed = time.time() - start
         print(f"[VLMWorldModel] Claude call completed in {elapsed:.2f}s for: {image_path.name}")
 
-        # Add delay to avoid rate limiting (0.5 seconds between API calls)
-        time.sleep(0.5)
+        # Add delay to avoid rate limiting (1.0 second between API calls for large batches)
+        time.sleep(1.0)
 
         # Collect text blocks
         text_chunks = []

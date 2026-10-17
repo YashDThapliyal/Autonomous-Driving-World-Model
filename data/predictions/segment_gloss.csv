@@ -1,0 +1,44 @@
+clip,segment_id,start,end,affordance,yield_to,lead_state,phase,gloss_short,gloss_long
+clip1,0,0,2,wait,lead,stopped,FOLLOW / queue,following vehicle queue in traffic,Ego maintains distance behind lead vehicle in congested urban street with multiple cars ahead.
+clip1,1,3,4,wait,ped,none,YIELD to pedestrian,yielding to pedestrians crossing,Ego vehicle stopped to yield right-of-way to pedestrians crossing the street ahead.
+clip1,2,5,8,stop,lead,stopped,STOP behind vehicle,stopped behind lead vehicle,"Ego vehicle is stationary, following a gray sedan with brake lights illuminated in urban traffic."
+clip1,3,9,10,stop,ped,none,STOP for pedestrian,stopped for pedestrians crossing,Ego vehicle halted at intersection while pedestrians cross in front of vehicle path.
+clip1,4,11,11,wait,ped,none,YIELD to pedestrian,yielding to pedestrians crossing street,"Ego vehicle stopped, waiting for pedestrians to clear the crosswalk before proceeding."
+clip1,5,12,12,wait,lead,stopped,FOLLOW / queue,following vehicle in urban queue,Ego maintains distance behind lead vehicle in congested urban street with pedestrians and parked cars.
+clip1,6,13,13,wait,none,none,WAIT,stopped in urban traffic congestion,Ego vehicle is stationary in congested urban street with pedestrians and parked vehicles blocking forward progress.
+clip1,7,14,14,wait,lead,none,FOLLOW / queue,following vehicle in urban queue,Ego maintains distance behind lead vehicle in congested urban street with pedestrians and parked cars.
+clip1,8,15,23,wait,ped,none,YIELD to pedestrian,yielding to pedestrians crossing,Ego vehicle stopped or slowing to yield right-of-way to pedestrians in the roadway.
+clip1,9,24,24,wait,none,none,WAIT,stopped at traffic light intersection,Ego vehicle is halted at a red traffic signal in an urban street with pedestrians and other vehicles present.
+clip1,10,25,25,wait,ped,none,YIELD to pedestrian,yielding to pedestrians crossing,Ego vehicle stopped or slowing to yield right-of-way to pedestrians in crosswalk.
+clip1,11,26,26,wait,none,none,WAIT,waiting at traffic light intersection,Ego vehicle is stopped at a red traffic light in an urban intersection with pedestrians and other vehicles present.
+clip1,12,27,27,wait,ped,none,YIELD to pedestrian,yielding to pedestrians crossing,Ego vehicle stopped or slowing to yield right-of-way to pedestrians in the intersection.
+clip1,13,28,28,wait,none,none,WAIT,waiting at traffic light intersection,Ego vehicle stopped at red traffic light in urban street intersection with pedestrians and parked vehicles nearby.
+clip2,0,0,19,wait,lead,stopped,FOLLOW / queue,nighttime highway queue following,Ego maintains distance behind lead vehicle in congested nighttime traffic queue.
+clip3,0,0,3,wait,lead,stopped,FOLLOW / queue,following vehicle queue in urban street,Ego maintains distance behind lead vehicle in moderate traffic queue on urban road.
+clip3,1,4,6,go,none,none,GO,moving through urban traffic,Ego vehicle is proceeding forward in moderate urban traffic with multiple vehicles ahead.
+clip3,2,7,23,wait,lead,stopped,FOLLOW / queue,following vehicle queue in traffic,Ego maintains safe distance while following a queue of vehicles in urban congestion.
+clip4,0,0,1,wait,lead,stopped,FOLLOW / queue,following vehicle queue in urban street,Ego maintains distance behind lead vehicle in congested urban traffic with multiple cars ahead.
+clip4,1,2,5,wait,ped,none,YIELD to pedestrian,yielding to pedestrian crossing,Ego vehicle stopped or slowing to yield right-of-way to pedestrian crossing the street ahead.
+clip4,2,6,11,stop,ped,none,STOP for pedestrian,stopped yielding to pedestrian crossing,Ego vehicle halted to allow pedestrian in orange jacket to safely cross the street.
+clip4,3,12,15,wait,ped,none,YIELD to pedestrian,yielding to pedestrians crossing,Ego vehicle stopped or slowing to yield right-of-way to pedestrians crossing the street ahead.
+clip4,4,16,19,wait,lead,stopped,FOLLOW / queue,following vehicle queue in urban street,Ego maintains distance behind lead vehicle in congested urban traffic with multiple cars ahead.
+clip5,0,0,4,wait,lead,stopped,FOLLOW / queue,following queue of vehicles,Ego maintains distance behind lead vehicle in a queue of stationary or slow-moving traffic.
+clip5,1,5,7,stop,ped,none,STOP for pedestrian,stopped yielding to pedestrians crossing,Ego vehicle halted at intersection while pedestrians cross the roadway ahead.
+clip5,2,8,13,wait,ped,none,YIELD to pedestrian,yielding to pedestrians crossing,Ego vehicle stopped or slowing to yield right-of-way to pedestrians crossing the roadway ahead.
+clip5,3,14,20,wait,lead,stopped,FOLLOW / queue,following vehicle in traffic queue,Ego maintains distance behind lead vehicle in congested urban traffic flow.
+clip5,4,21,31,go,lead,moving,FOLLOW moving lead,following moving lead vehicle,Ego maintains safe distance behind lead vehicle in urban street traffic.
+clip6,0,0,10,wait,lead,stopped,FOLLOW / queue,following vehicle queue on narrow street,Ego maintains distance behind yellow sports car in a line of parked and moving vehicles on a residential street.
+clip6,1,11,14,wait,none,none,WAIT,parked cars blocking street,"Ego vehicle stopped, waiting for parked vehicles ahead to clear the narrow street."
+clip6,2,15,16,wait,lead,stopped,FOLLOW / queue,following vehicle in queue,Ego maintains distance behind red car in slow traffic queue on residential street.
+clip6,3,17,19,wait,ped,none,YIELD to pedestrian,yielding to pedestrian crossing,Ego vehicle stopped to yield right-of-way to pedestrian crossing in front on residential street.
+clip7,0,0,3,wait,lead,stopped,FOLLOW / queue,following vehicle in nighttime queue,"Ego maintains distance behind lead vehicle in low-light traffic queue, constrained by preceding car's speed."
+clip7,1,4,6,stop,lead,stopped,STOP behind vehicle,stopped behind vehicle at night,"Ego vehicle is stationary, following a white sedan with brake lights illuminated in nighttime traffic."
+clip7,2,7,17,wait,lead,stopped,FOLLOW / queue,following vehicle in nighttime queue,Ego maintains distance behind lead vehicle in slow-moving traffic during night conditions.
+clip7,3,18,18,stop,lead,stopped,STOP behind vehicle,stopped behind vehicle nighttime,"Ego vehicle is stationary, following a lead vehicle at night in congested traffic."
+clip7,4,19,19,wait,lead,stopped,FOLLOW / queue,nighttime traffic queue following,Ego maintains distance behind lead vehicle in congested nighttime traffic queue.
+clip8,0,0,15,go,lead,moving,FOLLOW moving lead,following yellow taxi ahead,Ego maintains distance behind yellow taxi on multi-lane highway during dusk conditions.
+clip8,1,16,18,go,none,none,GO,accelerating on highway,Ego vehicle accelerates forward on multi-lane highway with moderate traffic ahead.
+clip8,2,19,20,go,lead,moving,FOLLOW moving lead,following moving lead vehicle,Ego maintains safe distance behind yellow lead car on urban highway during daylight.
+clip9,0,0,11,wait,lead,stopped,FOLLOW / queue,following vehicle queue in parking lot,Ego maintains distance behind lead vehicle in slow-moving queue through parking area.
+clip9,1,12,16,wait,none,none,WAIT,stopped at traffic light,"Ego vehicle is stationary at a signalized intersection, waiting for the traffic signal to turn green."
+clip9,2,17,24,wait,lead,stopped,FOLLOW / queue,following vehicle in queue,Ego maintains distance behind lead vehicle in slow-moving traffic queue at night.

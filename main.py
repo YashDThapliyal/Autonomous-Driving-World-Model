@@ -118,7 +118,15 @@ def main():
 
     # Determine which clips to run
     if args.all:
-        clips = ["clip1", "clip2", "clip3"]
+        # Automatically detect all clips from frames directory
+        if FRAMES_DIR.exists():
+            clips = sorted([d.name for d in FRAMES_DIR.iterdir() if d.is_dir()])
+            if not clips:
+                log("No clips found in frames directory. Run extract_frames first.")
+                sys.exit(1)
+        else:
+            # Fallback to default clips if frames directory doesn't exist yet
+            clips = ["clip1", "clip2", "clip3"]
     elif args.clip:
         clips = [args.clip]
     else:

@@ -20,5 +20,4 @@ data/raw_videos/*
 !data/raw_videos/.gitkeep
 data/frames/*
 !data/frames/.gitkeep
-data/predictions/*
-!data/predictions/.gitkeep
+# predictions are small CSVs and back the metrics in the README, so they are committed

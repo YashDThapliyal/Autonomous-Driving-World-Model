@@ -231,13 +231,10 @@ def main():
     print(f"Yield_to accuracy : {metrics['yield_to_acc']:.3f}")
     print(f"Lead_state accuracy: {metrics['lead_state_acc']:.3f}")
 
-    # Print small example table for clip1 if it exists
+    # Print small example table for first available clip
     clips_present = sorted({c for (c, _) in labels.keys()})
-    if "clip1" in clips_present:
-        print_sample_table("clip1", labels, preds, max_rows=20)
-    else:
-        if clips_present:
-            print_sample_table(clips_present[0], labels, preds, max_rows=20)
+    if clips_present:
+        print_sample_table(clips_present[0], labels, preds, max_rows=20)
 
     # (Optional) show a few mismatches
     mismatches = metrics["mismatches"]

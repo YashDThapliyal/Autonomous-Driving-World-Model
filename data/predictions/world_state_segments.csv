@@ -1,0 +1,44 @@
+clip,segment_id,start,end,affordance,yield_to,lead_state,phase
+clip1,0,0,2,wait,lead,stopped,FOLLOW / queue
+clip1,1,3,4,wait,ped,none,YIELD to pedestrian
+clip1,2,5,8,stop,lead,stopped,STOP behind vehicle
+clip1,3,9,10,stop,ped,none,STOP for pedestrian
+clip1,4,11,11,wait,ped,none,YIELD to pedestrian
+clip1,5,12,12,wait,lead,stopped,FOLLOW / queue
+clip1,6,13,13,wait,none,none,WAIT
+clip1,7,14,14,wait,lead,none,FOLLOW / queue
+clip1,8,15,23,wait,ped,none,YIELD to pedestrian
+clip1,9,24,24,wait,none,none,WAIT
+clip1,10,25,25,wait,ped,none,YIELD to pedestrian
+clip1,11,26,26,wait,none,none,WAIT
+clip1,12,27,27,wait,ped,none,YIELD to pedestrian
+clip1,13,28,28,wait,none,none,WAIT
+clip2,0,0,19,wait,lead,stopped,FOLLOW / queue
+clip3,0,0,3,wait,lead,stopped,FOLLOW / queue
+clip3,1,4,6,go,none,none,GO
+clip3,2,7,23,wait,lead,stopped,FOLLOW / queue
+clip4,0,0,1,wait,lead,stopped,FOLLOW / queue
+clip4,1,2,5,wait,ped,none,YIELD to pedestrian
+clip4,2,6,11,stop,ped,none,STOP for pedestrian
+clip4,3,12,15,wait,ped,none,YIELD to pedestrian
+clip4,4,16,19,wait,lead,stopped,FOLLOW / queue
+clip5,0,0,4,wait,lead,stopped,FOLLOW / queue
+clip5,1,5,7,stop,ped,none,STOP for pedestrian
+clip5,2,8,13,wait,ped,none,YIELD to pedestrian
+clip5,3,14,20,wait,lead,stopped,FOLLOW / queue
+clip5,4,21,31,go,lead,moving,FOLLOW moving lead
+clip6,0,0,10,wait,lead,stopped,FOLLOW / queue
+clip6,1,11,14,wait,none,none,WAIT
+clip6,2,15,16,wait,lead,stopped,FOLLOW / queue
+clip6,3,17,19,wait,ped,none,YIELD to pedestrian
+clip7,0,0,3,wait,lead,stopped,FOLLOW / queue
+clip7,1,4,6,stop,lead,stopped,STOP behind vehicle
+clip7,2,7,17,wait,lead,stopped,FOLLOW / queue
+clip7,3,18,18,stop,lead,stopped,STOP behind vehicle
+clip7,4,19,19,wait,lead,stopped,FOLLOW / queue
+clip8,0,0,15,go,lead,moving,FOLLOW moving lead
+clip8,1,16,18,go,none,none,GO
+clip8,2,19,20,go,lead,moving,FOLLOW moving lead
+clip9,0,0,11,wait,lead,stopped,FOLLOW / queue
+clip9,1,12,16,wait,none,none,WAIT
+clip9,2,17,24,wait,lead,stopped,FOLLOW / queue

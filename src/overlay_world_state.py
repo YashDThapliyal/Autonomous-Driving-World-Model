@@ -10,7 +10,7 @@ import cv2
 from PIL import Image, ImageDraw, ImageFont
 from moviepy.video.io.ImageSequenceClip import ImageSequenceClip
 
-from run_yolo import run_yolo, filter_peds, filter_cars
+from .run_yolo import run_yolo, filter_peds, filter_cars
 
 # ============================================================================
 # YOLO Target Selection Heuristic Weights

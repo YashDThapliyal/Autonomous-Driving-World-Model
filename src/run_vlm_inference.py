@@ -19,7 +19,15 @@ def main():
     preds_root = project_root / "data" / "predictions"
     preds_root.mkdir(parents=True, exist_ok=True)
 
-    clips = ["clip1", "clip2", "clip3"]
+    # Auto-detect clips from frames directory
+    if frames_root.exists():
+        clips = sorted([d.name for d in frames_root.iterdir() if d.is_dir()])
+        if not clips:
+            print(f"[ERROR] No clips found in {frames_root}")
+            return
+        print(f"[INFO] Detected clips: {', '.join(clips)}")
+    else:
+        clips = ["clip1", "clip2", "clip3"]  # fallback
 
     wm = VLMWorldModel()
 
